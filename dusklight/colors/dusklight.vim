@@ -6,81 +6,80 @@
 " License:     MIT
 " ============================================================================
 
-colorscheme alduin
-
-set background=dark
-hi clear
-
-if exists("syntax_on")
-  syntax reset
-endif
-
-let g:colors_name = "dusklight"
-
-" Enable syntax
 syntax on
+colorscheme alduin
+set background=dark
 
-" Enable true color
 if has("termguicolors")
   set termguicolors
 endif
 
 " Normal text
-highlight Normal guifg=#e0e0d0 guibg=#1c1c1c ctermfg=252 ctermbg=234
+highlight Normal guifg=#e3e36f guibg=#1c1c1c ctermfg=252 ctermbg=234
+
 
 " Comments - Bright green
 highlight Comment guifg=#21c421 gui=italic ctermfg=71 cterm=italic
 
 " Keywords - Violet (used for def, return, if, else, etc.)
-highlight Keyword guifg=#9a2ea6 gui=bold ctermfg=129 cterm=bold
-highlight Repeat guifg=#9a2ea6 gui=bold ctermfg=129 cterm=bold
-highlight Conditional guifg=#9a2ea6 gui=bold ctermfg=129 cterm=bold
-highlight Statement guifg=#9a2ea6 gui=bold ctermfg=129 cterm=bold
+highlight Keyword guifg=#9a2ea6 gui=none ctermfg=129 cterm=none
+highlight Repeat guifg=#9a2ea6 gui=none ctermfg=129 cterm=none
+highlight Conditional guifg=#9a2ea6 gui=none ctermfg=129 cterm=none
+highlight Statement guifg=#9a2ea6 gui=none ctermfg=129 cterm=none
 
 " Functions - Deep blue
-highlight Function guifg=#4037c6 gui=bold ctermfg=63 cterm=bold
+highlight Function guifg=#4037c6 gui=none ctermfg=63 cterm=none
 
-" Types (class names, return types) - Pale yellow
-highlight Type guifg=#ffff5f gui=bold ctermfg=227 cterm=bold
+ Types (class names, return types) - Burned orange
+highlight Type guifg=#c49000 gui=none ctermfg=227 cterm=none
 
 " Strings - Earthy red
-highlight String guifg=#d7875f gui=none ctermfg=173 cterm=none
+highlight String guifg=#a83f25 gui=none ctermfg=173 cterm=none
 
-" Numbers - Soft pink
-highlight Number guifg=#d75f87 gui=none ctermfg=168 cterm=none
+" Numbers - Dark yellow
+highlight Number guifg=#b89302 gui=none ctermfg=168 cterm=none
 
-" Operators - Burnt orange
-highlight Operator guifg=#e08804 gui=bold ctermfg=208 cterm=bold
+" Operators - Burnt yellow
+highlight Operator guifg=#e0c738 gui=none ctermfg=208 cterm=none
 
-" Identifiers (variables) - Light yellow
+" Identifiers (variables) - Light-gray orange
 highlight Identifier guifg=#ffffaf gui=none ctermfg=229 cterm=none
 
-" Constants (True, False, None, etc.) - Soft cyan
-highlight Constant guifg=#87ffff gui=bold ctermfg=123 cterm=bold
+" Constants (True, False, None, etc.) - Brown
+highlight Constant guifg=#75442b gui=none ctermfg=123 cterm=none
 
 " Preprocessor / decorators / annotations
-highlight PreProc guifg=#9a2ea6 gui=bold ctermfg=129 cterm=bold
+highlight PreProc guifg=#475da8 gui=none ctermfg=129 cterm=none
 
 " TODO, FIXME
-highlight Todo guifg=#ff5f5f gui=bold ctermfg=203 cterm=bold
+highlight Todo guifg=#ff5f5f gui=none ctermfg=203 cterm=none
 
-" VimL functions (specific to .vim files)
-autocmd FileType vim highlight Function guifg=#c4163e gui=bold ctermfg=160 cterm=bold
-autocmd FileType vim highlight Comment  guifg=#21bf21 gui=italic ctermfg=77 cterm=italic
 
-" Enhanced language-specific highlight overrides
-augroup DusklightOverrides
+augroup AlduinEnhanced
   autocmd!
-  autocmd FileType python,java highlight Keyword     guifg=#9a2ea6 gui=bold     ctermfg=129 cterm=bold
-  autocmd FileType python,java highlight Function    guifg=#4037c6 gui=bold     ctermfg=63  cterm=bold
-  autocmd FileType python,java highlight Type        guifg=#ffff5f gui=bold     ctermfg=227 cterm=bold
-  autocmd FileType python,java highlight Comment     guifg=#21c421 gui=italic   ctermfg=71  cterm=italic
-  autocmd FileType python,java highlight String      guifg=#d7875f gui=none     ctermfg=173 cterm=none
+
+" --- Common Groups ---
+  autocmd FileType python,java highlight Keyword     guifg=#9c8d06 gui=none     ctermfg=111 cterm=none
+  autocmd FileType python,java highlight Function    guifg=#718c18 gui=none     ctermfg=51  cterm=none
+  autocmd FileType python,java highlight Type        guifg=#965b20 gui=none     ctermfg=227 cterm=none
+  autocmd FileType python,java highlight Comment     guifg=#21c421 gui=italic   ctermfg=65  cterm=italic
+  autocmd FileType python,java highlight String      guifg=#db7332 gui=none     ctermfg=173 cterm=none
   autocmd FileType python,java highlight Number      guifg=#d75f87 gui=none     ctermfg=168 cterm=none
-  autocmd FileType python,java highlight Operator    guifg=#e08804 gui=bold     ctermfg=208 cterm=bold
+  autocmd FileType python,java highlight Operator    guifg=#af87ff gui=none     ctermfg=141 cterm=none
   autocmd FileType python,java highlight Identifier  guifg=#ffffaf gui=none     ctermfg=229 cterm=none
-  autocmd FileType python,java highlight Constant    guifg=#87ffff gui=bold     ctermfg=123 cterm=bold
-  autocmd FileType python,java highlight PreProc     guifg=#9a2ea6 gui=bold     ctermfg=129 cterm=bold
-  autocmd FileType python,java highlight Todo        guifg=#ff5f5f gui=bold     ctermfg=203 cterm=bold
+  autocmd FileType python,java highlight Constant    guifg=#87ffff gui=none     ctermfg=123 cterm=none
+  autocmd FileType python,java highlight PreProc     guifg=#8b40d6 gui=none     ctermfg=129 cterm=none
+  autocmd FileType python,java highlight Todo        guifg=#ff5f5f gui=none     ctermfg=203 cterm=none
+  autocmd FileType python,java highlight Operator    guifg=#e08804 gui=none     ctermfg=203 cterm=none
+  autocmd FileType vim         highlight Function    guifg=#ad1717 gui=none     ctermfg=200 cterm=none
+  autocmd FileType vim         highlight Comment     guifg=#21bf21 gui=italic   ctermfg=200 cterm=italic
+  autocmd FileType java        highlight Exception   guifg=#e32020 gui=none     ctermfg=DarkRed cterm=none
 augroup END
+
+
+
+
+
+
+
 
