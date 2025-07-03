@@ -30,7 +30,7 @@ highlight Statement guifg=#9a2ea6 gui=none ctermfg=129 cterm=none
 " Functions - Deep blue
 highlight Function guifg=#4037c6 gui=none ctermfg=63 cterm=none
 
- Types (class names, return types) - Burned orange
+" Types (class names, return types) - Burned orange
 highlight Type guifg=#c49000 gui=none ctermfg=227 cterm=none
 
 " Strings - Earthy red
